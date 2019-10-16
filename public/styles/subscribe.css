@@ -1,0 +1,61 @@
+#subscriptions {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 0px;
+}
+
+
+
+.subscription-button {
+    /* display: inline-block; */
+
+    padding: 0 10px;
+    margin: 0px;
+    font-size: 22px;
+    background-color: #AAA;
+    border-radius: 5px;
+    color: white;
+}
+
+.subscription-button:hover{
+    background:rgb(218, 79, 79);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.frequency-button {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 8px;
+    font-size: 22px;
+    background-color: #AAA;
+    border-radius: 5px;
+    color: white;
+}
+
+.frequency-button:hover{
+    background:rgb(218, 79, 79);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.custom-control-input {
+    padding: 0 10px;
+    margin: 0 8px;
+    font-size: 22px;
+    background-color: #AAA;
+    border-radius: 5px;
+    color: white;
+}
+
+
+.custom-control-label{
+    cursor: pointer;
+}
+
+
+
+.selected {
+    background:rgb(187, 8, 8);
+}

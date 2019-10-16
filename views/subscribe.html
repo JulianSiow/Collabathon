@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- jQuery CDN -->
-    <script defer
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap JS -->
+    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script defer src="/scripts/app.js"></script>
+
+    <link rel="stylesheet" href="styles/subscribe.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,27 +22,57 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="firstName" placeholder="Special characters are not accepted" value="" required="">
                 <div class="invalid-feedback">
-                    Valid first name is required.
+                    Invalid first name.
                 </div>
                 </div>
                 <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="lastName" placeholder="Special characters are not accepted" value="" required="">
                 <div class="invalid-feedback">
-                    Valid last name is required.
+                    Invalid last name.
                 </div>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Invalid email address.
                 </div>
             </div>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            <div>
+                <h4>Select your subscription(s)</h4>
+                <ul id="subscriptions" class="form-control">
+                    <button class="subscription-button">Books</button>
+                    <button class="subscription-button">Fiction</button>
+                    <button class="subscription-button">Non-Fiction</button>
+                
+​
+                    <button class="subscription-button">Gothic</button>
+                    <button class="subscription-button">Halloween</button>
+                    <button class="subscription-button">Movies</button>
+​
+​
+                    <button class="subscription-button">Novels</button>
+                    <button class="subscription-button">Tv Shows</button>
+                    <button class="subscription-button">Religion</button>
+                </ul>
+​
+                <div class="invalid-feedback">
+                        Select at least one topic.
+                </div>
+            </div>
+​
+            <div class="d-block my-3">
+                    <h4 class="mb-3">Newsletter's Frequency</h4>
+                    <ul>
+                        <button id="daily" class="frequency-button selected">Daily</button>
+                        <button id="weekly" class="frequency-button">Weekly</button>
+                        <button id="monthly" class="frequency-button">Monthly</button>
+                    </ul>
+            <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">Submit</button>
         </form>
     </div>
 </body>
