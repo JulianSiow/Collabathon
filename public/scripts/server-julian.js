@@ -1,11 +1,14 @@
+userNumber = 0;
 const onSuccess = (response) => {
-    response.data.forEach((sub) => {
+    console.log(response.data)
+    response.data.forEach((subscriber) => {
+        userNumber += 1
         const nameTemplate = `
         <tr>
-          <th scope="row">1</th>
-          <td>${Sub.firstName}</td>
-          <td>${Sub.lastName}</td>
-          <td>${Sub.email}</td>
+          <th scope="row">${userNumber}</th>
+          <td>${subscriber.firstName}</td>
+          <td>${subscriber.lastName}</td>
+          <td>${subscriber.email}</td>
         </tr>
         `;
         $('tbody').append(nameTemplate);

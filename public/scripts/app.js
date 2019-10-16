@@ -15,6 +15,28 @@ $(".frequency-button").on("click", ()=>{
     $(event.target).addClass("selected");
 });
 
+const onSuccess = ()=>{
+    console.log('success')
+};
+
+const onError = ()=>{
+    console.log('error')
+};
+
+const file = ()=>{
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost:3000/api/v1/new-subscriber',
+        data: {
+            "email": $('#email').val(),
+            "firstName": $('#firstName').val(),
+            "lastName": $('#lastName').val(),
+        },
+        success: onSuccess,
+        error: onError,
+    })
+};
+
 $("#submit").on("click", ()=>{
     event.preventDefault();
     $("#firstName").removeClass("is-invalid");
@@ -67,6 +89,8 @@ $("#submit").on("click", ()=>{
     if ($(".subscription-button").hasClass("selected")===false) {
         $("#subscriptions").addClass("is-invalid");
     }
+
+    file();
 }
 )
 
