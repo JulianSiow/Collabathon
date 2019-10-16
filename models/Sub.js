@@ -13,7 +13,19 @@ const SubSchema = new Schema({
     lastName : {
         type : String,
         required : true,
-    }
+    },
+    fiction: Boolean,
+    nonFiction: Boolean,
+    tvShows: Boolean,
+    novels: Boolean,
+    movies: Boolean,
+    books: Boolean,
+    halloween: Boolean,
+    gothic: Boolean,
+    religious: Boolean,
+    daily: Boolean,
+    weekly: Boolean,
+    monthly: Boolean,
 })
 
 const Sub = mongoose.model('Sub', SubSchema)
