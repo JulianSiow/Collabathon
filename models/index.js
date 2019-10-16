@@ -11,5 +11,5 @@ mongoose.connect(DB_URL, {
   .catch((error) => console.log(error));
 
 module.exports = {
-    Subs: require('./Sub.js'),
+    Sub: require('./Sub.js'),
   };

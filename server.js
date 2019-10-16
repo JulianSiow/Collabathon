@@ -1,7 +1,8 @@
 //--------------------------SETUP SECTION 
 //External Modules
 const express = require('express');
-const bodyparser = require('body-parser');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 //internal modules
 const db = require('./models');
 //instanced module
@@ -9,6 +10,9 @@ const app = express();
 
 //---------------------------MIDDLEWARE SECTION 
 
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //---------------------------CONFIGURATION VARIABLES SECTION 
 const PORT = process.env.PORT || 3000;
@@ -20,7 +24,7 @@ const PORT = process.env.PORT || 3000;
 //--------------HTML Routes
 
 //Home Route
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile('views/home.html', {
       root: __dirname,
     });
@@ -47,12 +51,14 @@ app.get('/owner', (req, res) => {
     });
 });
 
+// app.get('/api/v1/subscribers')
+
 //--------------API Routes
 
 //Index Route
 
-app.get('/api/v1/subscribers'), (req, res) => {
-    db.Subs.find({}, (err, allSubs) => {
+app.get('/api/v1/subscribers', (req, res) => {
+    db.Sub.find({}, (err, allSubs) => {
         if(err) console.log(err);
         res.json({
             status: 200,
@@ -61,14 +67,27 @@ app.get('/api/v1/subscribers'), (req, res) => {
             dateRequested: new Date().toLocaleString(),
         })
     })
-}
+})
 
-app.get('api/v1/subscribers/:name', (req, res) => {
-    db.Subs.findOne({name:req.params.name}, (err, foundSub) => {
+//Show Route
+app.get('/api/v1/subscribers/:name', (req, res) => {
+    db.Sub.findOne({name:req.params.name}, (err, foundSub) => {
         if(err) return console.log(err)
         res.json({
             status: 200,
             data: foundSub,
+            dateRequested: new Date().toLocaleString(),
+        })
+    })
+})
+
+//Create Route
+app.post('/api/v1/new-subscriber', (req, res) => {
+    db.Sub.create(req.body, (err, createSub)=>{
+        if(err) return console.log(err);
+        res.json({
+            status: 201,
+            data: createSub,
             dateRequested: new Date().toLocaleString(),
         })
     })

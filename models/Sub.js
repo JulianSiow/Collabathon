@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const SubsSchema = new Schema({
+const SubSchema = new Schema({
     email : {
         type : String,
         required : true,
@@ -16,6 +16,6 @@ const SubsSchema = new Schema({
     }
 })
 
-const Subs = mongoose.model('Subs', SubsSchema)
+const Sub = mongoose.model('Sub', SubSchema)
 
-module.exports = Subs;
+module.exports = Sub;
