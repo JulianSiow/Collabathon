@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css">
     <!-- jQuery CDN -->
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -23,11 +28,107 @@
     <title>Document</title>
 </head>
 <body>
-
-  
-    <h1>Home Page</h1>
-    <button class="subscribe">
-    <a href="/subscribe" target="url">Subscribe</a>
-</button>
+<!-- head bar -->
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">About</h4>
+                <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">Contact</h4>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                  <li><a href="#" class="text-white">Like on Facebook</a></li>
+                  <li><a href="#" class="text-white">Email me</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark shadow-sm headbar">
+          <div class="container d-flex justify-content-between">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="images/search.png" class="d-flex align-items-center"> <!--add search image-->
+            </a>
+          </div>
+        </div>
+      </header>
+      <!-- Jumbotron -->
+      <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Hello! Vampire Enthusiasts</h1>
+              <a href="/subscribe" class="btn btn-primary my-2 sub-button">Subscribe</a>
+            </p>
+          </div>
+        </section>
+    <h4 class="title-card">Popular</h4>
+    <div>
+        <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img id="header-img" src="images/vamp@3x.png" alt="vampire">
+                    <div class="card-body">
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                        <img id="header-img" src="images/forest@3x.png" alt="vampire">
+                    <div class="card-body">
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                        <img id="header-img" src="images/bitmap@3x.png" alt="vampire">
+                    <div class="card-body">
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                              <img id="header-img" src="images/kiss@3x.png" alt="vampire">
+                          <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                              </div>
+                              <small class="text-muted">9 mins</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    </div>
 </body>
 </html>

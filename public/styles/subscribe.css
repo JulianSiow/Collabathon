@@ -1,61 +1,160 @@
-#subscriptions {
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 3px;
+}
+
+/* HEADER----------------------------------------------- */
+
+header {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
-    padding: 0px;
+    width: 100%;
+}
+
+hr {
+    border: .5px solid black;
+    margin: 0;
+}
+
+
+#header-img {
+    width: 49pt;
+    height: 49pt;
+    margin: 12.5pt 12.5pt 0 12.5pt;
+}
+
+
+h1 {
+    font-weight: 900;
+    color: rgb(56 55 55);
+    font-size: 25pt;
+    margin: 28pt 0;
+
+}
+
+h4 {
+    font-weight: 400;
+    color: rgb(56 55 55);
+    font-size: 17pt;
+    margin-bottom: 30pt;
+}
+
+label {
+    font-size: 16pt;
 }
 
 
 
+/* SUBSCRIPTIOS------------------------------------------------------------------------- */
+
+.subscriptions {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    padding: 0px;
+    border: none;
+    flex-wrap: wrap;
+}
+
 .subscription-button {
     /* display: inline-block; */
-
+    width: 96pt;
+    height: 35pt;
+    border-radius: 12pt;
     padding: 0 10px;
-    margin: 0px;
-    font-size: 22px;
+    margin: 0 15pt 12pt 0;
+    font-size: 12pt;
     background-color: #AAA;
-    border-radius: 5px;
     color: white;
 }
 
 .subscription-button:hover{
-    background:rgb(218, 79, 79);
+    background:rgb(80 50 102);
     text-decoration: underline;
     cursor: pointer;
 }
 
+/* FREQUENCY BUTTON ---------------------------------------------------------------------------- */
+
+.my-3 {
+    display: flex;
+}
+
 .frequency-button {
-    display: inline-block;
+    display: inline;
+    width: 96pt;
+    height: 35pt;
+    border-radius: 12pt;
     padding: 0 10px;
-    margin: 0 8px;
-    font-size: 22px;
+    margin: 0 15pt 12pt 0;
+    font-size: 12pt;
     background-color: #AAA;
-    border-radius: 5px;
     color: white;
 }
 
 .frequency-button:hover{
-    background:rgb(218, 79, 79);
+    background: rgb(80 50 102);
     text-decoration: underline;
     cursor: pointer;
 }
 
-.custom-control-input {
+/* .custom-control-input {
     padding: 0 10px;
     margin: 0 8px;
     font-size: 22px;
     background-color: #AAA;
     border-radius: 5px;
     color: white;
-}
+} */
 
 
-.custom-control-label{
+/* .custom-control-label{
     cursor: pointer;
+} */
+
+.btn-primary {
+    color: #fff;
+    background-color: rgb(80 50 102);
+    border-color: rgb(80 50 102);
 }
 
 
 
 .selected {
-    background:rgb(187, 8, 8);
+    background:rgb(80 50 102);
 }
+
+@media (max-width: 400px) {
+
+    .my-3 {
+        display: flex;
+    }
+
+    .subscription-button {
+        /* display: inline-block; */
+        width: 70pt;
+        height: 25pt;
+        border-radius: 12pt;
+        padding: 0 10px;
+        margin: 0 12pt 12pt 0;
+        font-size: 15px;
+        background-color: #AAA;
+        color: white;
+    }
+
+    .frequency-button {
+        display: inline;
+        width: 67pt;
+        height: 25pt;
+        border-radius: 12pt;
+        padding: 0 10px;
+        margin: 0 15pt 12pt 0;
+        font-size: 12pt;
+        background-color: #AAA;
+        color: white;
+    }
+
+    .selected {
+        background:rgb(80 50 102);
+    }
+  }

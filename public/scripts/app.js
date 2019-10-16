@@ -37,7 +37,8 @@ const file = ()=>{
     })
 };
 
-$("#submit").on("click", ()=>{
+const validate = ()=>{
+    let valid = true
     event.preventDefault();
     $("#firstName").removeClass("is-invalid");
     $("#lastName").removeClass("is-invalid");
@@ -46,31 +47,36 @@ $("#submit").on("click", ()=>{
 //  FIRST NAME ---------------------------------------------------------------------------------
     if ($("#firstName").val().length < 2 ) {
         $("#firstName").addClass("is-invalid");
+        valid = false;
     }
 
     for (let i = 0; i < iChars.length; i++) {
         if ($("#firstName").val().includes(iChars[i]) === true) {     
             $("#firstName").addClass("is-invalid");
-        }
+        } 
     }
     for (let i = 0; i < numbers.length; i++) {
         if ($("#firstName").val().includes(numbers[i]) === true) {     
             $("#firstName").addClass("is-invalid");
+            valid = true;
         }
+
     }
 
 // LAST NAME----------------------------------------------------------------------------------------
     if ($("#lastName").val().length < 2) {
         $("#lastName").addClass("is-invalid");
+        valid  = false;
     }
     for (let i = 0; i < iChars.length; i++) {
         if ($("#lastName").val().includes(iChars[i]) === true) {     
            $("#lastName").addClass("is-invalid");
-           }
+           valid = false } 
     }
     for (let i = 0; i < numbers.length; i++) {
         if ($("#lastName").val().includes(numbers[i]) === true) {     
             $("#lastName").addClass("is-invalid");
+            valid = false;
         }
     }
 
@@ -78,21 +84,31 @@ $("#submit").on("click", ()=>{
 
     if ($("#email").val().includes("@") === false) {     
            $("#email").addClass("is-invalid");
+           valid = false;
     }
 
     if ($("#email").val().includes(".") === false) {     
         $("#email").addClass("is-invalid");
+        valid = false;
     }
 
 // SUBSCRIPTIONS ------------------------------------------------------------------------------------
 
     if ($(".subscription-button").hasClass("selected")===false) {
         $("#subscriptions").addClass("is-invalid");
+        valid = false;
+        
     }
+    if(valid===true){
+        $('#exampleModal').modal('toggle');
+        $('#exampleModal').modal('show');
+        $('#exampleModal').modal('hide');
 
-    file();
+    }
 }
-)
+
+
+$("#submit").on("click", validate)
 
 
 
