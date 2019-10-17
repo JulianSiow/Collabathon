@@ -95,19 +95,19 @@ app.post('/api/v1/new-subscriber', (req, res) => {
 
 //Delete Route ============FOR DEBUGGING ONLY================
 
-const removeAll = () => {
-    db.Sub.remove({}, (err, removedSubs) => {
-        if(err){ 
-            console.log(err);
-            monggose.connection.close();
-        } else {
-            console.log('success', removedSubs);
-            mongoose.connection.close();
-        }
-    })
-}
+// const removeAll = () => {
+//     db.Sub.remove({}, (err, removedSubs) => {
+//         if(err){ 
+//             console.log(err);
+//             monggose.connection.close();
+//         } else {
+//             console.log('success', removedSubs);
+//             mongoose.connection.close();
+//         }
+//     })
+// }
 
-removeAll();
+// removeAll();
 
 //---------------------------START SERVER SECTION 
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}/`));

@@ -105,6 +105,7 @@ const validate = ()=>{
         $('#exampleModal').modal('hide');
 
     }
+    file();
 }
 
 
